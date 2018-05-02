@@ -1,0 +1,25 @@
+# status: draft|pending|rejected|awarded|active|completed
+
+- grant:
+  name: NIH RFA 1234567890
+  dates: 9/1/2018 - 8/31/2023
+  effort: 0.2
+  directs: 250,000
+  title: A machine learning approach to big data management in epigenetic data science
+  funder: U.S. National Institutes of Wealth
+  PI: Sheffield
+  role: PI
+  status: pending
+
+- grant:
+  name: 
+  dates: 3/1/2018-2/29-2019
+  effort: 0.25
+  directs: 300,000
+  title: Assessing probability of cyborg assimilation of carbon-based life forms
+  funder: Enterprise Foundation
+  PI: Sheffield
+  role: PI
+  status: active
+
+  

@@ -1,0 +1,27 @@
+<form class="form-inline" method="POST" action="{{ url_for('process') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon">Select output format</span>
+            <select name="format_source" class="selectpicker form-control">
+              {% for o in format_sources %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>
+            <br/>
+        <span class="input-group-addon">Select grant source</span>
+            <select name="grant_source" class="selectpicker form-control">
+              {% for o in grant_sources %}
+              <option value="{{ o.name }}">{{ o.name }}</option>
+              {% endfor %}
+            </select>
+            <br/>
+        <span class="input-group-addon">Filter by status</span>
+            <select name="status_filter" multiple>
+              <option value="active" selected>active</option>
+              <option value="pending" selected>pending</option>
+              <option value="rejected">rejected</option>
+            </select>          
+    </div>
+    <button type="submit" class="btn btn-default">Go</button>
+  </div>
+</form>
