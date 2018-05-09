@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
 from argparse import ArgumentParser
 import yaml
 
@@ -13,7 +14,7 @@ parser.add_argument('-s', '--status',
     help="Filter status", nargs="+", default=None)
 
 parser.add_argument('-d', '--document-template',
-    help="Document with liquid-like status stags", default=None)
+    help="Document with liquid-like status tags", default=None)
 
 parser.add_argument('-f', '--format-template',
     help="Text file with output format template",
@@ -33,6 +34,18 @@ grants = yaml.load(file(args.grant_source, 'r'))
 
 with open(args.format_template, "r") as f:
     outformat = f.read() 
+
+
+def simple_format(string, vars):
+    try:
+        result = string.format(**vars)
+    except KeyError as e:
+        key = e.args[0]
+        print("Warning, adding missing key: " + key, file=sys.stderr)
+        vars[key] = ""
+        return simple_format(string, vars)
+    return result
+
 
 def format_grants(grants, outformat, status_list=None):
     # Set up a list to accumulate grants
@@ -54,12 +67,9 @@ def format_grants(grants, outformat, status_list=None):
         # Use a weird character we expect NOT to be there for padding,
         # because we will replace it momentarily
         g["char"] = "`"
-        try:
-            formatted = outformat.format(**g)
-            formatted = formatted.replace("`", "&#02; ")
-            formatted_grants.append(formatted)
-        except:
-            pass
+        formatted = simple_format(outformat, g)
+        formatted = formatted.replace("`", "&#02; ")
+        formatted_grants.append(formatted)
 
     totalout = '\n'.join(formatted_grants)
     return(totalout)
@@ -77,4 +87,4 @@ if args.document_template:
 
 
 else:
-    print(format_grants(grants, outformat, "active"))
+    print(format_grants(grants, outformat, args.status))

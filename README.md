@@ -28,3 +28,60 @@ FLASK_APP=flask_pigmy.py flask run
 
 Then point browser to: http://127.0.0.1:5000
 
+
+## How it works
+
+`pigmy` is quite simple. It will read your `grants.yaml` file, which is just a list of grants in `yaml` format, and then uses a user-provided template to output those grants in the format you want. The built-in templates are in `markdown` format, so `pigmy` will output `markdown` text, which you can then pipe through `pandoc` to get a PDF or docx.
+
+There are two user-customizable files that determine how `pigmy` will format the output: the format files and document templates.
+
+**Format files**, found in [/formats](formats), provide a way for you specify how text from a single grant will be organized. An example is:
+
+```
+{namePlusPI} &nbsp; &nbsp; &nbsp; {dates} &nbsp; &nbsp; &nbsp; {effort}  
+{funder}  
+Title: {title}  
+Role: {role}
+```
+
+The bracketed values (like `{title}`) will be populated with information from the grant. These formats specify how each individual grant will be formatted.
+
+**Document files**, found in [/document_templates](/document_templates), show how the grants will be organized in a file. An example is the NIH research support template, which looks like this:
+
+```
+# D. Research support
+
+## Active
+
+{active}
+	
+```
+
+Here, you use bracketed *status* codes. In this example, all the active grants, formatted according to the *format file* and appended in a list, will replace the `{active}` tag. You can use this to insert your grants list into any document format you like.
+
+
+## Example recipes
+
+See example `grants.yaml` files in [grant_metadata](/grant_metadata).
+
+See example out put in [output](/output).
+
+
+Generate an NIH-style 'research support' that can be appended to the end of a NIH-format Biosketch:
+
+```
+python pigmy.py -e -g grant_metadata/example_grants.yaml -d document_templates/research_support_template.md -f formats/nih_other_support.txt | pandoc --reference-doc pandoc_templates/template.docx -o output/example_research_support.docx
+```
+
+Use LibreOffice to generate a PDF of said output
+
+```
+python pigmy.py -e -g grant_metadata/example_grants.yaml -d document_templates/research_support_template.md -f formats/nih_other_support.txt | pandoc --reference-doc pandoc_templates/template.docx -o output/example_research_support.docx
+soffice --convert-to pdf output/example_research_support.docx --outdir output
+
+```
+
+"pandoc", "--reference-doc", "pandoc_templates/template.docx",
+        "-o", outfile, "--preserve-tabs"], 
+
+python pigmy.py -g grant_metadata/example_grants.yaml -f formats/nih_other_support.txt

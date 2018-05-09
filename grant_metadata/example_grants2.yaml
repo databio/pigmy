@@ -12,7 +12,7 @@
   status: pending
 
 - grant:
-  name: 
+  name: Grant name
   dates: 3/1/2018-2/29-2019
   effort: 0.25
   directs: 300,000
