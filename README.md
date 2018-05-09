@@ -8,6 +8,13 @@ Just maintain your list of grants once, in a human- and computer-readable `yaml`
 
 # Getting started
 
+## Examples
+
+The grant metadata file [example_grants.yaml](grant_metadata/example_grants.yaml) can create the output file [example_research_support.pdf](output/example_research_support.pdf). This example is based on the [nih_other_support.txt format](nih_other_support.txt) and the [research_support_template.md document template](/document_templates/research_support_template.md). 
+
+Further example `grants.yaml` files are in [grant_metadata](/grant_metadata), and example output is in [output](/output).
+
+
 ## Run on the command line:
 
 ```
@@ -15,19 +22,6 @@ python pigmy.py -g grants.yaml -f output_format.txt
 
 python pigmy.py --help
 ```
-
-## Run a web-server
-
-`pigmy` uses the lightweight `flask` microframework to give you a web interface, making it even easier to get the format you need, if you like pointy-clicky.
-
-Run like:
-
-```
-FLASK_APP=flask_pigmy.py flask run
-```
-
-Then point browser to: http://127.0.0.1:5000
-
 
 ## How it works
 
@@ -60,12 +54,7 @@ The bracketed values (like `{title}`) will be populated with information from th
 Here, you use bracketed *status* codes. In this example, all the active grants, formatted according to the *format file* and appended in a list, will replace the `{active}` tag. You can use this to insert your grants list into any document format you like.
 
 
-## Example recipes
-
-See example `grants.yaml` files in [grant_metadata](/grant_metadata).
-
-See example out put in [output](/output).
-
+# Recipes
 
 Generate an NIH-style 'research support' that can be appended to the end of a NIH-format Biosketch:
 
@@ -81,7 +70,16 @@ soffice --convert-to pdf output/example_research_support.docx --outdir output
 
 ```
 
-"pandoc", "--reference-doc", "pandoc_templates/template.docx",
-        "-o", outfile, "--preserve-tabs"], 
 
-python pigmy.py -g grant_metadata/example_grants.yaml -f formats/nih_other_support.txt
+# Run a web-server
+
+`pigmy` uses the lightweight `flask` microframework to give you a web interface, making it even easier to get the format you need, if you like pointy-clicky.
+
+Run like:
+
+```
+FLASK_APP=flask_pigmy.py flask run
+```
+
+Then point browser to: http://127.0.0.1:5000
+
