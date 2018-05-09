@@ -1,4 +1,4 @@
-{namePlusPI}&#x09;{dates}&#x09;{effort}  
+{namePlusPI} &nbsp; &nbsp; &nbsp; {dates} &nbsp; &nbsp; &nbsp; {effort}  
 {funder}  
 Title: {title}  
 Role: {role}
