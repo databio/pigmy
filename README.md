@@ -59,13 +59,22 @@ Here, you use bracketed *status* codes. In this example, all the active grants, 
 Generate an NIH-style 'research support' that can be appended to the end of a NIH-format Biosketch:
 
 ```
-python pigmy.py -e -g grant_metadata/example_grants.yaml -d document_templates/research_support_template.md -f formats/nih_other_support.txt | pandoc --reference-doc pandoc_templates/template.docx -o output/example_research_support.docx
+python pigmy.py -e -g grant_metadata/example_grants.yaml \
+	-d document_templates/research_support_template.md \
+	-f formats/nih_other_support.txt \
+	| pandoc --reference-doc pandoc_templates/template.docx \
+	-o output/example_research_support.docx
 ```
 
 Use LibreOffice to generate a PDF of said output
 
 ```
-python pigmy.py -e -g grant_metadata/example_grants.yaml -d document_templates/research_support_template.md -f formats/nih_other_support.txt | pandoc --reference-doc pandoc_templates/template.docx -o output/example_research_support.docx
+python pigmy.py -e -g grant_metadata/example_grants.yaml \
+	-d document_templates/research_support_template.md \
+	-f formats/nih_other_support.txt \
+	| pandoc --reference-doc pandoc_templates/template.docx \
+	-o output/example_research_support.docx
+
 soffice --convert-to pdf output/example_research_support.docx --outdir output
 
 ```
