@@ -1,0 +1,1 @@
+| {funder}:{name} | ${directs}   | {indirects}   | {status}     | {effort}             |

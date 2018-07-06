@@ -1,1 +1,0 @@
-| {name} | ${directs}   |         | {status}     | {effort}             | {dates} |
