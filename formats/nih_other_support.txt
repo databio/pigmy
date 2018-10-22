@@ -1,5 +1,5 @@
-{namePlusPI}&#x09;{dates}&#x09;{effort}  
-{funder}&#x09;${directs}  
+{namePlusPI}\tab{dates}\tab{effort}  
+{funder}\tab${directs}  
 Title: {title}  
 Major goals: {goals}  
 Role: {role}

@@ -1,0 +1,5 @@
+{namePlusPI}&#x09;{dates}&#x09;{effort}  
+{funder}&#x09;${directs}  
+Title: {title}  
+Major goals: {goals}  
+Role: {role}
