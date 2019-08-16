@@ -10,7 +10,7 @@ Just maintain your list of grants once, in a human- and computer-readable `yaml`
 
 ## Examples
 
-The grant metadata file [example_grants.yaml](grant_metadata/example_grants.yaml) can create the output file [example_research_support.pdf](output/example_research_support.pdf). This example is based on the [nih_other_support.txt format](nih_other_support.txt) and the [research_support_template.md document template](/document_templates/research_support_template.md). 
+The grant metadata file [example_grants.yaml](grant_metadata/example_grants.yaml) can create the output file [example_research_support.pdf](output/example_research_support.pdf). This example is based on the [nih_other_support.txt format](formats/nih_other_support.txt) and the [research_support_template.md document template](document_templates/research_support_template.md). 
 
 Further example `grants.yaml` files are in [grant_metadata](/grant_metadata), and example output is in [output](/output).
 

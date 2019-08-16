@@ -1,0 +1,4 @@
+{namePlusPI}\tab{dates}\tab{effort}  
+{funder}\tab${directs}  
+Title: {title}  
+Role: {role}

@@ -1,4 +1,4 @@
-{namePlusPI}\tab{dates}  
+{namePlusPI}&#x09;{dates}  
 {funder}  
 Title: {title}  
 Role: {role}

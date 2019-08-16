@@ -1,4 +1,4 @@
-# OTHER SUPPORT
+# Other support
 
 <!-- **Nathan Sheffield, PhD** -->
 
