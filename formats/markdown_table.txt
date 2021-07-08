@@ -1,1 +1,1 @@
-| {funder}:{name} | ${directs}   | {indirects}   | {status}     | {effort}             |
+| {short_title} {funder}:{name} ({PI}) | ${directs}   | {indirects}   | {submission_date} {status} {score}     | {effort}             |

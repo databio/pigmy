@@ -30,7 +30,7 @@ if args.document_template and args.status:
     print("Status options are ignored if a document template is provided.")
 
 import sys
-grants = yaml.load(file(args.grant_source, 'r'))
+grants = yaml.safe_load(file(args.grant_source, 'r'))
 
 with open(args.format_template, "r") as f:
     outformat = f.read() 
@@ -51,6 +51,7 @@ def format_grants(grants, outformat, status_list=None):
     # Set up a list to accumulate grants
     formatted_grants = []
     for g in grants:
+        # print(g)
         if not "PI" in g.keys() and g["role"] == "PI":
             g["PI"] = "Sheffield"
 
