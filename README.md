@@ -1,6 +1,6 @@
 # pigmy
 
-**NOTE: This repository is no longer maintained. I recommend you look into the [markmeld](https://github.com/databio/markmeld) package, which can do everything pigmy did and more.**
+**NOTE 2021-10-08: This repository is no longer maintained. I recommend you look into the [markmeld](https://github.com/databio/markmeld) package, which can do everything pigmy did and more. I will leave this code here for reference purposes.**
 
 
 Are you annoyed by having to maintain your list of active and pending grants in 5 different formats? You have the NIH *Research Support* format, which excludes amounts, the NIH *Other Support* format, which includes amounts, NSF formats, internal formats for P&T committees, and your own personal list to keep track of deadlines and applications... and the list goes on.
