@@ -1,5 +1,8 @@
 # pigmy
 
+**NOTE: This repository is no longer maintained. I recommend you look into the [markmeld](https://github.com/databio/markmeld) package, which can do everything pigmy did and more.**
+
+
 Are you annoyed by having to maintain your list of active and pending grants in 5 different formats? You have the NIH *Research Support* format, which excludes amounts, the NIH *Other Support* format, which includes amounts, NSF formats, internal formats for P&T committees, and your own personal list to keep track of deadlines and applications... and the list goes on.
 
 What a pain to keep all these things updated, requiring hours of time. Now, `pigmy` can help! `pigmy` (pronounced 'pygmy') is a python application that makes formatting grant metadata easy. It's the PI grant metadata yeoman, here to take care of your grant metadata management needs.
