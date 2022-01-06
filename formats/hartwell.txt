@@ -1,0 +1,9 @@
+Funding source: {funder}  
+Title: {title} ({name})  
+Review status: {status}  
+Dates: {dates}  
+PI: {PI}  
+Role: {role}  
+Effort: {effort}  
+Direct funds: {directs}  
+Technical aims: {goals}  

@@ -65,6 +65,11 @@ def format_grants(grants, outformat, status_list=None):
                 g["effort"] = str(float(g["effort"]) * 12) + " calendar months"
             except ValueError:
                 g["effort"] = ""
+        else:
+            try:
+                g["effort"] = str(int(float(g["effort"]) * 100)) + "%"
+            except ValueError:
+                g["effort"] = "0%"
         # Use a weird character we expect NOT to be there for padding,
         # because we will replace it momentarily
         g["char"] = "`"
